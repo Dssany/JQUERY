@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+img{width:30px;height:30px;}
+.drag {
+	position:fixed;width: 200px; height: 100px;border-style: solid;}
+</style>
+<script src="jquery-3.5.1.min.js"></script>
+<script src="jquery-1.12.1-ui.js"></script>
+<script type="text/javascript">
+	 num=0;
+	$(function(){
+		$("#draggable").draggable();
+	})
+	
+	
+	
+	 $(document).ready(function() {
+        	$("#clickmin").click(function(){
+    			$("b").text(--num*5);
+    		});
+        	$("#clickmin").click(function(){
+    			$("#sizeh1").css({ 'font-size':num*10 });
+    			$("#sizestrong").css({ 'font-size':num*5 });
+    		});
+        	$("#clickplus").click(function(){
+    			$("b").text(++num*5);
+    		});
+        	$("#clickplus").click(function(){
+    			$("#sizeh1").animate({ 'font-size':num*10 });
+    			$("#sizestrong").animate({ 'font-size':num*5 });
+    		});
+        	
+   
+    });
+	
+	
+</script>
+</head>
+<body>
+<div>
+<h1 id="sizeh1">오늘의 소설</h1>
+<strong id="sizestrong">
+오늘의 소설<br><br>
+오늘의 소설<br><br>
+오늘의 소설</strong>
+
+
+</div>
+		<div id="draggable" class="drag">
+			<div style="width:200px;background-color: yellow;text-align: center;">리모콘
+				<div  style="position:absolute;z-index:-1;text-align:center;height:20px;width:200px;margin:0">
+					<img id="clickmin" style="z-index:1;position:left;" src="resources/images/왼쪽화살표.jpg" >
+					<b style="background-color: yellow;">0</b>
+					<img id="clickplus" style="z-index:1;position:right;" src="resources/images/오른쪽화살표.jpg">
+				</div>
+			</div>
+		</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
